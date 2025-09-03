@@ -6,10 +6,26 @@
 
     <a class="blog-logo" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
+    {% assign parent_pages = site.pages | where: "dropdown", true %}
+    {% assign child_pages = site.pages | where_exp: "page", "page.parent" %}
+    
     {% for my_page in site.pages %}
-    {% if my_page.active %}
-    <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-    {% endif %}
+      {% if my_page.active and my_page.dropdown != true and my_page.parent == nil %}
+        <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+      {% elsif my_page.dropdown == true %}
+        <div class="dropdown">
+          <a href="{{ my_page.url | prepend: site.baseurl }}" class="dropdown-toggle">
+            {{ my_page.title }} <span class="dropdown-arrow">▼</span>
+          </a>
+          <div class="dropdown-menu">
+            {% for child_page in child_pages %}
+              {% if child_page.parent == my_page.active %}
+                <a href="{{ child_page.url | prepend: site.baseurl }}">{{ child_page.title }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
     {% endfor %}
 
     <!-- RSS feed

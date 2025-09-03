@@ -6,6 +6,7 @@ crawlertitle: "Why and how this blog was created"
 permalink: /researchareas/
 summary: "About this blog"
 active: Research Areas
+dropdown: true
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
