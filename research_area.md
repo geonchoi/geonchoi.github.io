@@ -1,11 +1,11 @@
 ---
 bg: "owl.jpg"
 layout: page
-title: "About"
+title: "Research Areas"
 crawlertitle: "Why and how this blog was created"
-permalink: /about/
+permalink: /researchareas/
 summary: "About this blog"
-active: false
+active: Research Areas
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
