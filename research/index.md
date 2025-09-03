@@ -1,37 +1,72 @@
 ---
-bg: "owl.jpg"
 layout: page
-title: "Research Areas"
-crawlertitle: "Why and how this blog was created"
+title: "Research"
+crawlertitle: "Research"
 permalink: /research/
-summary: "About this blog"
-active: Research Areas
+active: Research
 ---
 
-# Research Areas
+# Research
 
-Our research spans multiple areas of wireless communications and signal processing, focusing on next-generation technologies and their practical applications.
+My research interests span information theory, channel coding, and machine learning applications in wireless communications. I focus on developing novel coding schemes and optimization techniques for next-generation wireless systems.
 
-## Current Research Focus
+## Current Research Areas
 
-### [Machine Learning](/research/machine-learning/)
-Exploring deep learning and AI techniques for wireless communication systems, including neural network-based channel estimation, reinforcement learning for resource allocation, and federated learning frameworks.
+### Deep Learning-Enhanced Error Correction
+- Development of deep polar codes for short blocklength transmission
+- Machine learning approaches to channel coding optimization
+- Neural network-based decoder architectures
 
-### [Computer Vision](/research/computer-vision/)
-Developing visual communication systems and computer vision algorithms for next-generation networks, with applications in smart cities, autonomous vehicles, and industrial IoT.
+### Polar Codes and Advanced Coding Techniques
+- Sparsely pre-transformed polar codes for low-complexity decoding
+- Rate-matching techniques for polar codes
+- Two-stage decoding approaches for improved performance
 
-### [6G Physical Layer Innovations](/research/6g-research/)
-Advancing physical layer technologies for 6G wireless systems, including channel coding breakthroughs, advanced modulation techniques, and AI-native design approaches.
+### State Estimation and Signal Processing
+- Split-KalmanNet for robust state estimation
+- Machine learning-enhanced Kalman filtering
+- Applications in vehicular communication systems
+
+### Integrated Radar and Communication Systems
+- Information-theoretic approaches to joint radar-communication design
+- Pulse-Doppler radar integration with communication systems
+- Spectrum sharing between radar and communication systems
 
 ## Research Philosophy
 
-Our research is driven by the need to solve real-world challenges in wireless communications while maintaining a strong theoretical foundation. We focus on:
+I believe in bridging theoretical foundations with practical implementations. My work aims to:
 
-- **Innovation**: Developing novel solutions that push the boundaries of current technology
-- **Practical Impact**: Ensuring our research translates to tangible improvements in communication systems
-- **Collaboration**: Working with industry partners and academic institutions worldwide
-- **Sustainability**: Contributing to energy-efficient and environmentally conscious technologies
+- Develop theoretically sound solutions with practical impact
+- Leverage machine learning to enhance classical communication techniques
+- Create efficient algorithms suitable for real-world deployment
+- Foster collaboration between academia and industry
 
-## Collaboration Opportunities
+## Ongoing Projects
 
-We welcome collaborations with researchers, industry partners, and students interested in advancing wireless communication technologies. Please [contact us](/about/) for potential research partnerships.
+### Deep Polar Codes Extension
+Developing rate-matching techniques for deep polar codes to enable flexible coding rates while maintaining excellent error correction performance.
+
+### Non-Coherent Polar-Coded Communication
+Investigating polar codes for block-fading channels without channel state information, using code-splitting techniques.
+
+### Quantum-Enhanced Error Correction
+Exploring the intersection of quantum computing and classical error correction for future wireless systems.
+
+## Research Impact
+
+My work has contributed to:
+- **Standardization efforts** in 3GPP and IEEE
+- **Patent applications** in the United States and South Korea
+- **Open-source implementations** of novel coding algorithms
+- **Collaborative research** with international partners
+
+## Selected Collaborations
+
+- **Universitat Pompeu Fabra, Spain** - Current position with Prof. Angel Lozano
+- **POSTECH, South Korea** - Ph.D. research with Prof. Namyoon Lee  
+- **Weizmann Institute of Science, Israel** - Collaboration on KalmanNet research
+- **Various IEEE and 3GPP working groups** - Standards contribution
+
+---
+
+*For a complete list of publications and technical details, please visit the [Publications](/publications/) page.*
