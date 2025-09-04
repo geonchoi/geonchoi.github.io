@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Geon Choi
+title: Home
 email: geon.choi@postech.ac.kr
 description: > # this means to ignore newlines until "baseurl:"
   Postdoctoral Researcher at Com-X Laboratory, POSTECH, working with Prof. Namyoon Lee. 
@@ -15,9 +15,9 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: "en"
 url: "http://localhost:4000" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
-disqus_username:
+# twitter_username: jekyllrb
+github_username:  geonchoi
+# disqus_username:
 
 # Build settings
 markdown: kramdown

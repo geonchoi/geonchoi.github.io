@@ -3,7 +3,7 @@ layout: page
 title: "Sundries"
 crawlertitle: "Sundries"
 permalink: /sundries/
-active: Sundries
+# active: Sundries
 ---
 
 # Sundries

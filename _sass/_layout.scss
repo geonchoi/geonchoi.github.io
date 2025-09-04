@@ -8,6 +8,20 @@ a {
   &:active { text-decoration: none; }
 }
 
+/*
+* Publication Title Styling
+* ========================================================================== */
+.pub-title {
+  color: #ce8b5c !important;
+  font-weight: 500 !important;
+  text-decoration: none;
+  
+  &:hover {
+    color: #b8794a !important;
+    text-decoration: underline;
+  }
+}
+
 
 
 /*
