@@ -23,6 +23,13 @@ github_username:  geonchoi
 markdown: kramdown
 permalink: /:categories/:title/
 
+# Math rendering
+kramdown:
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true
+    preview_as_code: false
+
 # Posts settings
 future: true
 safe: false
