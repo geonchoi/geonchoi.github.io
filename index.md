@@ -30,7 +30,7 @@ I am a Postdoctoral Researcher in the <a href="https://comx.postech.ac.kr/">Com-
 <!-- --- -->
 
 ## Research Interests
-- **Polar codes**: Advanced coding schemes for next-generation wireless systems  
+- **Polar codes**: Advanced coding schemes for next-generation wireless systems [[Link]](/research/polar-codes/)
 - **Deep learning-enhanced error correction codes**: Development of neural network-based approaches to improve channel coding performance
 - **State estimation and Kalman filtering**: Machine learning approaches to robust state estimation
 <!-- - **Information-theoretic approaches**: Theoretical foundations for integrated communication systems -->

@@ -20,7 +20,7 @@ summary: "Publications"
 
 
 ## Journal Articles
-- **G. Choi** and N. Lee, "[Sparsely Pre-transformed Polar Codes for Low-Latency SCL Decoding](https://ieeexplore.ieee.org/abstract/document/10945422)," in *IEEE Transactions on Communications* (early access)*
+- **G. Choi** and N. Lee, "[Sparsely Pre-transformed Polar Codes for Low-Latency SCL Decoding](https://ieeexplore.ieee.org/abstract/document/10945422)," in *IEEE Transactions on Communications* (early access)
 * H. Lee, J. Kim, **G. Choi**, I. P. Roberts, J. Choi and N. Lee, "[Nonlinear Self-Interference Cancellation With Adaptive Orthonormal Polynomials for Full-Duplex Wireless Systems](https://ieeexplore.ieee.org/document/10930684)," in *IEEE Transactions on Wireless Communications*, vol. 24, no. 7, pp. 5796-5810, July 2025
 - **G. Choi** and N. Lee, "[Deep Polar Codes](https://ieeexplore.ieee.org/abstract/document/10462164)," in *IEEE Transactions on Communications*, vol. 72, no. 7, pp. 3842-3855, July 2024
 - **G. Choi**, J. Park, N. Shlezinger, Y. C. Eldar, and N. Lee, "[Split-KalmanNet: A Robust Model-Based Deep Learning Approach for State Estimation](https://ieeexplore.ieee.org/abstract/document/10120968)," *IEEE Transactions on Vehicular Technology*, vol. 72, no. 9, pp. 12326-12331, Sept. 2023

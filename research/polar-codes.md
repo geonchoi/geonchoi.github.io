@@ -5,6 +5,8 @@ crawlertitle: "Polar Codes Research"
 permalink: /research/polar-codes/
 ---
 
+# Work in progress
+
 # Polar Codes and Advanced Coding Techniques
 
 [← Back to Research](/research/)
@@ -17,6 +19,22 @@ Polar codes represent a fundamental breakthrough in channel coding theory, being
 *Figure 1: Overview of polar codes research addressing practical deployment challenges*
 
 ## Theoretical Foundation
+
+
+### Polar Codes and Advanced Coding Techniques
+
+#### Polar Code Overview
+
+Polar codes, discovered by Arıkan in 2009, are the first provably capacity-achieving codes with explicit construction. They exploit the channel polarization phenomenon to achieve capacity with low encoding/decoding complexity of O(N log N). However, finite-length performance and specific error patterns in successive cancellation list (SCL) decoding present challenges for URLLC applications.
+
+![Polar Code Construction](../assets/images/research/polarization.png)
+*Figure 1: Polar code construction and channel polarization phenomenon*
+
+Polar codes face two fundamental challenges in practical deployment: **decoding errors** (Type I: path elimination, Type II: incorrect selection) and **blocklength constraints** (natural construction for N = 2^n only). My research develops targeted solutions addressing these specific limitations.
+
+**→ [Detailed Research: Polar Codes and Advanced Techniques](/research/polar-codes/)**  
+*Comprehensive coverage including deep polar codes, SPP codes, rate-matching techniques, and non-coherent transmission*
+
 
 ### Channel Polarization Phenomenon
 
@@ -44,7 +62,30 @@ $$\hat{u}_i = \begin{cases}
 
 Where $\mathcal{F}$ is the frozen set and $\mathcal{I}$ is the information set.
 
+
+
 ## Practical Challenges and Solutions
+
+### Challenge 3: Error Event Analysis and Mitigation
+
+Understanding and addressing specific error mechanisms in SCL decoding is crucial for optimal performance.
+
+#### Fundamental Error Types
+
+![Error Analysis Framework](../../assets/images/research/error_comprehensive.png)
+*Figure 6: Comprehensive error analysis framework for SCL decoding*
+
+**Type I Error - Path Elimination**:
+- Correct path eliminated from candidate list
+- Dominates at low-to-medium SNR
+- Addressed by SPP codes and increased list sizes
+
+**Type II Error - Incorrect Selection**:
+- Wrong path selected from remaining candidates
+- Dominates at high SNR due to minimum distance
+- Addressed by deep polar codes and concatenation
+
+**→ [Detailed Analysis: Error Probability in SCL Decoding](/research/error-probability-analysis/)**
 
 ### Challenge 1: Finite-Length Performance
 
@@ -132,43 +173,8 @@ $$\mathbf{x} = \mathbf{u}_L \mathbf{G}_L \Pi_{L-1} \mathbf{G}_{L-1} \cdots \Pi_1
 
 **→ [Comprehensive Guide: Rate-Matching Techniques](/research/rate-matching-techniques/)**
 
-### Challenge 3: Error Event Analysis and Mitigation
 
-Understanding and addressing specific error mechanisms in SCL decoding is crucial for optimal performance.
 
-#### Fundamental Error Types
-
-![Error Analysis Framework](../../assets/images/research/error_comprehensive.png)
-*Figure 6: Comprehensive error analysis framework for SCL decoding*
-
-**Type I Error - Path Elimination**:
-- Correct path eliminated from candidate list
-- Dominates at low-to-medium SNR
-- Addressed by SPP codes and increased list sizes
-
-**Type II Error - Incorrect Selection**:
-- Wrong path selected from remaining candidates
-- Dominates at high SNR due to minimum distance
-- Addressed by deep polar codes and concatenation
-
-**→ [Detailed Analysis: Error Probability in SCL Decoding](/research/error-probability-analysis/)**
-
-## Advanced Applications
-
-### Ultra-Reliable Low-Latency Communication (URLLC)
-
-**Requirements**:
-- Error rates below 10^-9
-- Latency under 1ms
-- Short packet transmission (100-1000 bits)
-
-**Solutions**:
-- Deep polar codes for reliability enhancement
-- SPP codes for reduced list size requirements
-- Optimized rate-matching for arbitrary lengths
-
-![URLLC Applications](../../assets/images/research/urllc_applications.png)
-*Figure 7: Polar codes in URLLC scenarios across different applications*
 
 ### Non-Coherent Transmission
 
@@ -187,21 +193,6 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 - Practical decoder with reasonable complexity
 - Performance analysis under various fading conditions
 
-### 5G NR Integration and Beyond
-
-**5G NR Applications**:
-- Control channel (PDCCH) reliability enhancement
-- Enhanced mobile broadband (eMBB) scenarios
-- Massive machine-type communications (mMTC)
-
-**6G Considerations**:
-- Terahertz communication systems
-- Massive MIMO with hundreds of antennas
-- Brain-computer interface applications
-- Holographic data transmission
-
-![5G Integration](../../assets/images/research/5g_polar_integration.png)
-*Figure 9: Polar codes integration in 5G NR and future 6G systems*
 
 ## Performance Analysis and Validation
 
@@ -227,51 +218,6 @@ $$P_e \leq \sum_{d=d_{min}}^{N} A_d Q\left(\sqrt{2d\gamma}\right)$$
 3. **Rate-Matching**: Graceful degradation with optimized techniques
 4. **Combined Approaches**: Synergistic effects when techniques are properly integrated
 
-### Implementation Complexity
-
-![Complexity Analysis](../../assets/images/research/implementation_complexity.png)
-*Figure 11: Implementation complexity analysis for different polar code techniques*
-
-**Complexity Comparison**:
-- **Encoding**: O(N log N) for all techniques
-- **Decoding**: Varies with list size and technique
-- **Memory**: Proportional to number of layers/list size
-- **Latency**: Depends on parallelization and hardware architecture
-
-## Hardware Implementation
-
-### FPGA Architectures
-
-**Design Principles**:
-- Pipelined processing for throughput
-- Parallel computation units
-- Efficient memory organization
-- Real-time processing capabilities
-
-### ASIC Optimization
-
-**Optimization Targets**:
-- Area efficiency
-- Power consumption minimization
-- Throughput maximization
-- Flexibility for multiple standards
-
-![Hardware Architecture](../../assets/images/research/hardware_comprehensive.png)
-*Figure 12: Hardware architecture for advanced polar code implementations*
-
-## Future Research Directions
-
-### Near-Term Objectives (2024-2025)
-
-1. **Adaptive Techniques**: Dynamic selection based on channel conditions
-2. **Joint Optimization**: Source-channel coding integration
-3. **Hardware Acceleration**: Specialized architectures for enhanced techniques
-
-### Long-Term Vision (2025-2027)
-
-1. **AI-Assisted Design**: Machine learning for automated optimization
-2. **Quantum-Resistant Variants**: Post-quantum cryptography integration
-3. **Semantic-Aware Coding**: Integration with semantic communication
 
 ### Emerging Applications
 
@@ -281,26 +227,6 @@ $$P_e \leq \sum_{d=d_{min}}^{N} A_d Q\left(\sqrt{2d\gamma}\right)$$
 - Massive IoT with energy harvesting
 - Satellite-terrestrial integration
 
-## Collaboration and Standardization
-
-### Industry Partnerships
-
-**Current Collaborations**:
-- **Samsung Electronics**: 5G-Advanced and 6G research
-- **ETRI**: Next-generation wireless standards
-- **Qualcomm**: Hardware implementation optimization
-
-### Standardization Contributions
-
-**3GPP Contributions**:
-- Enhanced polar code constructions
-- Rate-matching optimization
-- URLLC performance improvements
-
-**IEEE Activities**:
-- Advanced coding techniques standardization
-- Performance benchmarking
-- Implementation guidelines
 
 ## Conclusion
 
@@ -311,22 +237,10 @@ The integration of advanced techniques - deep polar codes, SPP codes, and sophis
 ---
 
 ## Related Publications
+1. **G. Choi** and N. Lee, "[Deep Polar Codes](https://ieeexplore.ieee.org/abstract/document/10462164)," in *IEEE Transactions on Communications*, vol. 72, no. 7, pp. 3842-3855, July 2024
+2. **G. Choi** and N. Lee, "[Sparsely Pre-transformed Polar Codes for Low-Latency SCL Decoding](https://ieeexplore.ieee.org/abstract/document/10945422)," in *IEEE Transactions on Communications* (early access)
+3.  **G. Choi** and N. Lee, "[Rate-Matching Deep Polar Codes via Polar Coded Extension](https://arxiv.org/abs/2505.06867)," submitted to TCOM.
 
-1. G. Choi et al., "Deep Polar Codes for Ultra-Reliable Low-Latency Communications," *IEEE Trans. Communications*, 2024.
-2. G. Choi et al., "Sparsely Pre-transformed Polar Codes for Enhanced SCL Decoding," *IEEE Trans. Vehicular Technology*, 2024.
-3. G. Choi et al., "Advanced Rate-Matching Techniques for Polar Codes in 5G and Beyond," *IEEE Communications Magazine*, 2024.
-
-## Research Resources
-
-**Open Source Tools**:
-- PolarSim: MATLAB simulation framework
-- PyPolar: Python implementation library
-- Hardware reference designs
-
-**Collaboration Opportunities**:
-- Industry partnerships for practical deployment
-- Academic research collaborations
-- Standardization committee participation
 
 **Contact**: [geon.choi@postech.ac.kr](mailto:geon.choi@postech.ac.kr)
 
