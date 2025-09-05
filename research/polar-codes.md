@@ -111,40 +111,17 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 *Figure 8: Decoding performance comparison across different techniques and scenarios (AWGN channel).*
 
 ### Challenge 2: Blocklength Flexibility
+Polar codes naturally support blocklengths $N = 2^n$ only.
+In 5G NR, the following methods are available for supporting arbitrary blocklengths.
 
-**The Constraint**: Polar codes naturally support blocklengths N = 2^n only
+The inherent constraint of Arıkan's construction limits polar code lengths to powers of two, i.e., $M = 2^n$. To support arbitrary codeword lengths $M \neq 2^n$, rate-matching techniques are employed:
+- **Shortening and Puncturing:** Used to reduce code length from a larger mother code of size $N > M$. 
+- **Extension and Repetition:** Used to increase code length from a smaller mother code of size $N < M$.
 
-**Practical Requirements**:
-- Arbitrary packet sizes (100-1500 bytes)
-- System compatibility (3GPP, IEEE standards)
-- Dynamic rate adaptation
+In 5G NR systems, quasi-uniform puncturing and shortening with sub-block interleaving are employed for rate-matching, ensuring compatibility while maintaining good performance \cite{3gpp-nr-coding}. Shortening removes the last $N-M$ interleaved codeword bits, while puncturing removes the first $N-M$ bits. Repetition extends the first $M-N$ interleaved codeword bits.
 
-#### Advanced Rate-Matching Techniques
 
-![Rate Matching Comprehensive](../../assets/images/research/rate_matching_comprehensive.png)
-*Figure 5: Comprehensive rate-matching techniques for flexible polar code deployment*
-
-**Shortening Techniques**:
-- **Bit-Reversal Shortening**: Preserves polarization properties
-- **Reliability-Based Selection**: Optimal shortened bit positions
-- **Performance**: Best for small length deviations
-
-**Puncturing Strategies**:
-- **Quasi-Uniform Puncturing (QUP)**: Distributed puncturing patterns
-- **Reliability-Based Puncturing**: Channel-aware bit removal
-- **Block vs. Distributed**: Trade-offs in implementation complexity
-
-**Repetition Methods**:
-- **Systematic Repetition**: Direct information bit repetition
-- **Coded Repetition**: Enhanced distance properties
-- **Hybrid Approaches**: Combining multiple techniques
-
-**Multi-Kernel Extensions**:
-- **Non-Binary Kernels**: Natural arbitrary length support
-- **Nested Structures**: Incremental redundancy capability
-- **Adaptive Constructions**: Channel-dependent optimizations
-
-**→ [Comprehensive Guide: Rate-Matching Techniques](/research/rate-matching-techniques/)**
+**Our extension** 
 
 Simulation Results
 
