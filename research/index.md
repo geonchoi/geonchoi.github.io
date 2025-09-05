@@ -5,8 +5,6 @@ crawlertitle: "Research"
 permalink: /research/
 ---
 
-# work in progress
-
 # Research
 
 My research interests span information theory, channel coding, and machine learning applications in wireless communications. I focus on developing novel coding schemes and optimization techniques for next-generation wireless systems, with particular emphasis on short packet communications and URLLC scenarios.
