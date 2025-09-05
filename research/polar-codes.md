@@ -141,10 +141,10 @@ Simulation Results
 ![Non-Coherent System](../../assets/images/research/noncoherent_comprehensive.png)
 *Figure 8: Non-coherent polar-coded communication system*
 
-**Key Innovations**:
+<!-- **Key Innovations**:
 - Information-theoretic analysis of capacity limits
 - Practical decoder with reasonable complexity
-- Performance analysis under various fading conditions
+- Performance analysis under various fading conditions -->
 
 Simulation Results
 
