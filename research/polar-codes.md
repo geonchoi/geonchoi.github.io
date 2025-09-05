@@ -24,7 +24,7 @@ Polar codes exploit the remarkable channel polarization phenomenon discovered by
 
 $$W_N^{(i)}: \mathcal{X} \to \mathcal{Y}^N \times \mathcal{X}^{i-1}$$
 
-![Channel Polarization](../../assets/images/research/channel_polarization.png)
+![Channel Polarization](../../assets/images/research/polarization.png)
 *Figure 2: Channel polarization phenomenon showing bit-channel capacities*
 
 **Key Properties**:

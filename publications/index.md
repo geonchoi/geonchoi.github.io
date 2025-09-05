@@ -5,7 +5,6 @@ title: "Publications"
 crawlertitle: "Research Publications"
 permalink: /publications/
 summary: "Publications"
-active: Publications
 ---
 
 
