@@ -70,7 +70,7 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 - Addressed by deep polar codes
 
 ![Error Analysis Framework](../assets/images/research/scl_error_event.png)
-*Figure 3: Two types of error event of SCL decoder*
+*Figure 3: Two types of error event of SCL decoder.*
 
 
 
@@ -79,26 +79,15 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 **Problem Addressed**: Type II errors (incorrect codeword selection) in SCL decoding by reducing the number of low-weight codewords.
 
 ![Deep Polar Architecture](../assets/images/research/deep_polar_layer.png)
-*Figure 4: Deep polar codes multi-layer architecture addressing Type II errors*
+*Figure 4: Deep polar codes multi-layer architecture addressing Type II errors.*
 
 **Technical Innovation**:
 - **Serially Concatenated Structure**: Multiple layers with optimized rate allocation
 - **Weight Distribution Enhancement**: Improved minimum distance properties
 - **SCL Decoding Enhancement**: Effective increase in list size without proportional complexity
 
-
-
-**Performance Gains**:
-- 1.5-2 dB improvement for short blocklengths (N=128)
-- Significant error floor improvement
-- Compatible with existing SCL architectures
-
-
-
-Simulation Results
-
 ![Performance Comprehensive](../assets/images/research/deep_polar_bec.png)
-*Figure 10: Comprehensive performance comparison across different techniques and scenarios*
+*Figure 5: Decoding performance comparison across different techniques and scenarios (BEC channel).*
 
 
 
@@ -106,29 +95,20 @@ Simulation Results
 
 **Problem Addressed**: Type I errors (correct codeword elimination) in SCL decoding by limiting the number of consecutive (semi-polarized) information bits.
 
-![SPP Mechanism](../assets/images/research/spp_codes.png)
-*Figure 4: SPP codes preventing correct path elimination through pre-transformation*
+![SPP Mechanism](../assets/images/research/spp_code.png)
+*Figure 6: SPP codes preventing correct path elimination through pre-transformation.*
 
-**Core Innovation**:
+**Technical Innovation**:
 - **Pre-transformation Matrix**: Strategic bit reordering to prevent path elimination
 - **Information Bit Constraint**: Consecutive information bits are separated
 - **Frozen Bit Insertion**: Low-reliability positions filled strategically
 - **Path Preservation**: Maintains correct paths in small list sizes
 
-**Technical Advantages**:
-- Maintains O(N log N) encoding complexity
-- Minimal decoder modification required
-- Significant gains with list sizes L=2,4
+![Performance Comprehensive](../assets/images/research/spp_consecutive_impact.png)
+*Figure 7: The effect of consecutive semi-polarized information bits.*
 
-**Implementation**:
-- Compatible with 5G NR polar code specifications
-- Hardware-friendly implementation
-- Adaptive pre-transformation based on channel conditions
-
-Simulation Results
-
-![Performance Comprehensive](../../assets/images/research/polar_performance_comprehensive.png)
-*Figure 10: Comprehensive performance comparison across different techniques and scenarios*
+![Performance Comprehensive](../assets/images/research/spp_bler.png)
+*Figure 8: Decoding performance comparison across different techniques and scenarios (AWGN channel).*
 
 ### Challenge 2: Blocklength Flexibility
 
@@ -172,7 +152,7 @@ Simulation Results
 *Figure 10: Comprehensive performance comparison across different techniques and scenarios*
 
 
-### Non-Coherent Transmission
+### Challenge 3: Non-Coherent Transmission
 
 **Motivation**: Short packet scenarios suffer from significant pilot overhead
 
