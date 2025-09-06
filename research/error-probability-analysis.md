@@ -13,7 +13,7 @@ permalink: /research/error-probability-analysis/
 
 Successive Cancellation List (SCL) decoding of polar codes is susceptible to two fundamental types of errors that significantly impact performance, especially in short packet transmission scenarios. Understanding these error mechanisms is crucial for developing advanced polar code variants and optimization strategies.
 
-![Error Analysis Overview](../../assets/images/research/error_analysis_overview.png)
+![Error Analysis Overview](../../research/error_analysis_overview.png)
 *Figure 1: Overview of error probability analysis framework for SCL decoding*
 
 ## Error Types in SCL Decoding
@@ -22,7 +22,7 @@ Successive Cancellation List (SCL) decoding of polar codes is susceptible to two
 
 **Definition**: The correct codeword path is eliminated from the candidate list during the decoding process before reaching the final decision stage.
 
-![Type I Error Mechanism](../../assets/images/research/type1_error_mechanism.png)
+![Type I Error Mechanism](../../research/type1_error_mechanism.png)
 *Figure 2: Mechanism of correct codeword elimination in SCL decoding tree*
 
 **Characteristics**:
@@ -46,7 +46,7 @@ Where the stage-wise elimination probability depends on:
 
 **Definition**: An incorrect codeword is selected as the final decision from the surviving candidate list.
 
-![Type II Error Mechanism](../../assets/images/research/type2_error_mechanism.png)
+![Type II Error Mechanism](../../research/type2_error_mechanism.png)
 *Figure 3: Incorrect codeword selection mechanism at the final decision stage*
 
 **Characteristics**:
@@ -79,7 +79,7 @@ Where:
 
 The error probabilities are strongly influenced by channel reliability patterns:
 
-![Channel Reliability](../../assets/images/research/channel_reliability_impact.png)
+![Channel Reliability](../../research/channel_reliability_impact.png)
 *Figure 4: Impact of channel reliability on different error types*
 
 **Type I Error Sensitivity**:
@@ -112,7 +112,7 @@ $$P_e \approx Q\left(\sqrt{N} \cdot \frac{C - R}{\sigma}\right) + o(N^{-1/2})$$
 
 Where the dispersion parameter $\sigma$ captures finite-length effects.
 
-![Finite Length Scaling](../../assets/images/research/finite_length_scaling.png)
+![Finite Length Scaling](../../research/finite_length_scaling.png)
 *Figure 5: Finite-length scaling behavior for different error types*
 
 ## Performance Optimization Strategies
@@ -133,7 +133,7 @@ Where the dispersion parameter $\sigma$ captures finite-length effects.
 
 ### Complexity-Performance Trade-offs
 
-![Trade-off Analysis](../../assets/images/research/complexity_performance_tradeoff.png)
+![Trade-off Analysis](../../research/complexity_performance_tradeoff.png)
 *Figure 6: Complexity-performance trade-offs for different optimization strategies*
 
 **Key Considerations**:
@@ -153,7 +153,7 @@ Where the dispersion parameter $\sigma$ captures finite-length effects.
 
 ### Results and Analysis
 
-![Error Type Distribution](../../assets/images/research/error_type_distribution.png)
+![Error Type Distribution](../../research/error_type_distribution.png)
 *Figure 7: Distribution of error types across different SNR regions*
 
 **Key Findings**:

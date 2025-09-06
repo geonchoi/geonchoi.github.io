@@ -13,7 +13,7 @@ permalink: /research/ml-enhanced-coding/
 
 Modern communication systems increasingly benefit from machine learning approaches to channel coding. My research develops neural network-based decoders that learn optimal decision boundaries, adapt to channel conditions, and achieve superior performance-complexity trade-offs compared to traditional algorithms, particularly for non-binary codes and high-order modulation schemes.
 
-![ML Enhanced Coding Overview](../../assets/images/research/ml_coding_overview.png)
+![ML Enhanced Coding Overview](../../research/ml_coding_overview.png)
 *Figure 1: Deep learning-enhanced error correction systems spanning multiple coding schemes*
 
 ## Motivation and Background
@@ -32,7 +32,7 @@ Modern communication systems increasingly benefit from machine learning approach
 - Joint optimization of encoding and decoding
 - Hardware-friendly implementations
 
-![Traditional vs ML Approach](../../assets/images/research/traditional_vs_ml.png)
+![Traditional vs ML Approach](../../research/traditional_vs_ml.png)
 *Figure 2: Comparison of traditional algorithmic approach versus machine learning-based decoding*
 
 ### Information-Theoretic Foundations
@@ -55,7 +55,7 @@ Where VC is the VC dimension of the decoder network.
 
 The ECCT architecture combines the strengths of convolutional neural networks and transformer attention mechanisms for superior error correction performance.
 
-![ECCT Architecture](../../assets/images/research/ecct_architecture.png)
+![ECCT Architecture](../../research/ecct_architecture.png)
 *Figure 3: Error Correction Convolutional Transformer (ECCT) detailed architecture*
 
 **Key Components**:
@@ -92,7 +92,7 @@ $$\hat{\mathbf{u}} = \text{softmax}(\mathbf{W}_{\text{out}} \mathbf{h}_L + \math
 
 **Challenge**: Traditional ECCT training assumes BPSK/QPSK modulation, leading to suboptimal performance for high-order schemes (16-QAM, 64-QAM, 256-QAM).
 
-![High-Order Modulation Training](../../assets/images/research/high_order_modulation.png)
+![High-Order Modulation Training](../../research/high_order_modulation.png)
 *Figure 4: ECCT training adaptation for high-order modulation schemes*
 
 **Technical Innovations**:
@@ -126,7 +126,7 @@ Where:
 
 **Motivation**: Many practical codes operate over finite fields GF(q) where q > 2, requiring specialized neural architectures.
 
-![Non-Binary ECCT](../../assets/images/research/nonbinary_ecct.png)
+![Non-Binary ECCT](../../research/nonbinary_ecct.png)
 *Figure 5: Extended ECCT architecture for non-binary error correction codes*
 
 **Technical Challenges**:
@@ -166,7 +166,7 @@ Reed-Solomon codes over GF(256) with parameters (n, k, d = n-k+1).
 - 2-3× complexity reduction compared to list decoding
 - Graceful degradation under channel estimation errors
 
-![RS Performance](../../assets/images/research/rs_ecct_performance.png)
+![RS Performance](../../research/rs_ecct_performance.png)
 *Figure 6: Performance comparison of ECCT vs. traditional Reed-Solomon decoders*
 
 ## Advanced Neural Architectures
@@ -176,7 +176,7 @@ Reed-Solomon codes over GF(256) with parameters (n, k, d = n-k+1).
 **Transformer for Channel Coding**:
 Pure transformer architectures adapted specifically for error correction:
 
-![Transformer Decoder](../../assets/images/research/transformer_decoder.png)
+![Transformer Decoder](../../research/transformer_decoder.png)
 *Figure 7: Pure transformer architecture for channel decoding*
 
 **Key Innovations**:
@@ -201,7 +201,7 @@ $$\mathbf{h}_v^{(l+1)} = \text{AGG}\left(\left\{\mathbf{m}_{c \to v}^{(l)} : c \
 **Iterative Decoding Integration**:
 RNN architectures that learn to improve decoding over multiple iterations:
 
-![RNN Decoder](../../assets/images/research/rnn_decoder.png)
+![RNN Decoder](../../research/rnn_decoder.png)
 *Figure 8: Recurrent neural decoder for iterative improvement*
 
 **Technical Features**:
@@ -216,7 +216,7 @@ RNN architectures that learn to improve decoding over multiple iterations:
 **Channel Simulation**:
 Comprehensive training data covering various channel conditions:
 
-![Training Data Generation](../../assets/images/research/training_data.png)
+![Training Data Generation](../../research/training_data.png)
 *Figure 9: Comprehensive training data generation covering multiple channel conditions*
 
 **Key Considerations**:
@@ -260,7 +260,7 @@ Where $\delta$ decreases with network capacity and training data size.
 
 ### Experimental Results
 
-![Performance Comparison](../../assets/images/research/ml_performance_results.png)
+![Performance Comparison](../../research/ml_performance_results.png)
 *Figure 10: Performance comparison across different neural decoder architectures*
 
 **Key Findings**:
@@ -289,7 +289,7 @@ Where $\delta$ decreases with network capacity and training data size.
 - Specialized memory for weight storage
 - Pipelined execution for throughput
 
-![FPGA Architecture](../../assets/images/research/fpga_ml_decoder.png)
+![FPGA Architecture](../../research/fpga_ml_decoder.png)
 *Figure 11: FPGA architecture for neural decoder implementation*
 
 **Resource Utilization**:

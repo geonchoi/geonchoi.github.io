@@ -13,7 +13,7 @@ permalink: /research/deep-polar-codes/
 
 Deep polar codes represent a significant advancement in channel coding for ultra-reliable low-latency communication (URLLC) scenarios. This research addresses the fundamental challenges of polar codes in short packet transmission through innovative multi-layer concatenated structures.
 
-![Deep Polar Overview](../../assets/images/research/deep_polar_overview.png)
+![Deep Polar Overview](../../research/deep_polar_overview.png)
 *Figure 1: Deep polar codes in URLLC context - addressing both reliability and latency requirements*
 
 ## Background and Motivation
@@ -29,7 +29,7 @@ Ultra-reliable low-latency communication demands:
 
 Traditional polar codes face two critical error events during successive cancellation list (SCL) decoding:
 
-![Error Events](../../assets/images/research/scl_error_events.png)
+![Error Events](../../research/scl_error_events.png)
 *Figure 2: Two main error events in SCL decoding of polar codes*
 
 1. **Correct Codeword Elimination (Type I Error)**
@@ -48,7 +48,7 @@ Traditional polar codes face two critical error events during successive cancell
 
 Deep polar codes employ a **serially concatenated multi-layer structure** to address both error types:
 
-![Deep Polar Structure](../../assets/images/research/deep_polar_detailed_structure.png)
+![Deep Polar Structure](../../research/deep_polar_detailed_structure.png)
 *Figure 3: Detailed architecture of deep polar codes with multiple encoding layers*
 
 **Layer Components**:
@@ -72,7 +72,7 @@ Where:
 
 ### 1. Weight Distribution Optimization
 
-![Weight Distribution](../../assets/images/research/weight_distribution_comparison.png)
+![Weight Distribution](../../research/weight_distribution_comparison.png)
 *Figure 4: Comparison of weight distributions between conventional and deep polar codes*
 
 **Objectives**:
@@ -93,7 +93,7 @@ $$L_{\text{effective}} = L_{\text{nominal}} \times \prod_{i=1}^{L-1} \rho_i$$
 
 Where $\rho_i$ represents the path retention factor at layer $i$.
 
-![SCL Enhancement](../../assets/images/research/scl_enhancement.png)
+![SCL Enhancement](../../research/scl_enhancement.png)
 *Figure 5: SCL decoding enhancement through multi-layer structure*
 
 ### 3. Complexity-Performance Trade-offs
@@ -106,7 +106,7 @@ Where $\rho_i$ represents the path retention factor at layer $i$.
 
 ### Simulation Results
 
-![Performance Comparison](../../assets/images/research/deep_polar_performance.png)
+![Performance Comparison](../../research/deep_polar_performance.png)
 *Figure 6: BLER performance comparison for different blocklengths and code rates*
 
 **Key Results**:
@@ -126,7 +126,7 @@ Where $A_d$ is the weight enumerator coefficient improved through deep structure
 
 ### Hardware Architecture
 
-![Hardware Implementation](../../assets/images/research/deep_polar_hardware.png)
+![Hardware Implementation](../../research/deep_polar_hardware.png)
 *Figure 7: Proposed hardware architecture for deep polar code decoder*
 
 **Design Principles**:

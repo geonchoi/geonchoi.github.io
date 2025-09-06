@@ -39,7 +39,7 @@ Developing coding schemes that consider message semantic importance, end-to-end 
 
 Channel coding is fundamental to reliable digital communication systems, providing error correction capabilities that enable robust data transmission over noisy channels. As wireless systems evolve towards 6G with stringent requirements for ultra-low latency, high reliability, and massive connectivity, advanced channel coding techniques become increasingly critical.
 
-<img src="/assets/images/research/channel_coding_system.png" width="90%" alt="Channel coding system">
+<img src="/assets/images/research/polarcode/channel_coding_system.png" width="90%" alt="Channel coding system">
 *Figure 1: Channel coding system*
 
 My research focuses on two primary areas: **advanced polar coding for future wireless communication systems** and **deep learning-enhanced error correction**. These approaches address the evolving challenges of next-generation wireless networks, particularly in URLLC scenarios requiring error rates below $10^{-9}$ with sub-millisecond latency constraints.

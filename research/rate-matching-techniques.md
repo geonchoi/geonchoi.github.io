@@ -13,7 +13,7 @@ permalink: /research/rate-matching-techniques/
 
 Polar codes are naturally constructed for blocklengths of $N = 2^n$, but practical communication systems require flexible blocklengths. Rate-matching techniques enable polar codes to adapt to arbitrary system requirements while maintaining near-capacity performance. This research explores advanced rate-matching strategies for next-generation wireless systems.
 
-![Rate Matching Overview](../../assets/images/research/rate_matching_overview.png)
+![Rate Matching Overview](../../research/rate_matching_overview.png)
 *Figure 1: Rate-matching techniques enabling flexible polar code deployment*
 
 ## Background and Motivation
@@ -31,7 +31,7 @@ Polar codes are naturally constructed for blocklengths of $N = 2^n$, but practic
 - Resource allocation constraints in OFDM systems
 - Standards compatibility (3GPP, IEEE, etc.)
 
-![Blocklength Mismatch](../../assets/images/research/blocklength_mismatch.png)
+![Blocklength Mismatch](../../research/blocklength_mismatch.png)
 *Figure 2: Mismatch between natural polar code lengths and system requirements*
 
 ### Performance Impact of Rate-Matching
@@ -48,7 +48,7 @@ Rate-matching introduces several performance considerations:
 
 **Principle**: Reduce the effective blocklength while maintaining the code rate.
 
-![Shortening Process](../../assets/images/research/shortening_process.png)
+![Shortening Process](../../research/shortening_process.png)
 *Figure 3: Shortening process for polar codes*
 
 **Algorithm**:
@@ -76,7 +76,7 @@ Where $\mathcal{I}_{\text{short}}$ represents the non-shortened position indices
 
 **Principle**: Remove selected coded bits to achieve the target blocklength.
 
-![Puncturing Strategies](../../assets/images/research/puncturing_strategies.png)
+![Puncturing Strategies](../../research/puncturing_strategies.png)
 *Figure 4: Different puncturing patterns and their impact on performance*
 
 **Puncturing Patterns**:
@@ -106,7 +106,7 @@ Where $\mathcal{P}$ is the set of punctured positions.
 
 **Principle**: Repeat selected coded bits to increase reliability or achieve target length.
 
-![Repetition Schemes](../../assets/images/research/repetition_schemes.png)
+![Repetition Schemes](../../research/repetition_schemes.png)
 *Figure 5: Various repetition schemes for polar codes*
 
 **Repetition Strategies**:
@@ -130,7 +130,7 @@ Where $\mathcal{P}$ is the set of punctured positions.
 
 **Advanced Technique**: Leverage bit-reversal permutation properties for optimal shortening.
 
-![Bit Reversal Shortening](../../assets/images/research/bit_reversal_shortening.png)
+![Bit Reversal Shortening](../../research/bit_reversal_shortening.png)
 *Figure 6: Bit-reversal shortening preserving polarization properties*
 
 **Key Innovation**:
@@ -149,7 +149,7 @@ Where $\mathcal{P}$ is the set of punctured positions.
 
 **Concept**: Integrate CRC bits optimally within rate-matched structures.
 
-![Distributed CRC](../../assets/images/research/distributed_crc_polar.png)
+![Distributed CRC](../../research/distributed_crc_polar.png)
 *Figure 7: Distributed CRC placement in rate-matched polar codes*
 
 **Benefits**:
@@ -175,7 +175,7 @@ Where $\mathbf{K}_i$ can be different kernel matrices.
 
 **Structure**: Hierarchical construction enabling incremental redundancy.
 
-![Nested Polar Structure](../../assets/images/research/nested_polar_structure.png)
+![Nested Polar Structure](../../research/nested_polar_structure.png)
 *Figure 8: Nested polar code structure for flexible rate adaptation*
 
 **Applications**:
@@ -203,7 +203,7 @@ Where $N_{\text{eff}}$ and $\sigma_{\text{eff}}$ are effective parameters accoun
 
 ### Simulation Results
 
-![Performance Comparison](../../assets/images/research/rate_matching_performance.png)
+![Performance Comparison](../../research/rate_matching_performance.png)
 *Figure 9: BLER performance comparison for different rate-matching techniques*
 
 **Key Findings**:
@@ -225,7 +225,7 @@ Where $N_{\text{eff}}$ and $\sigma_{\text{eff}}$ are effective parameters accoun
 
 ### Complexity Analysis
 
-![Complexity Comparison](../../assets/images/research/rate_matching_complexity.png)
+![Complexity Comparison](../../research/rate_matching_complexity.png)
 *Figure 10: Implementation complexity comparison for different techniques*
 
 **Encoding Complexity**:
@@ -252,7 +252,7 @@ Where $N_{\text{eff}}$ and $\sigma_{\text{eff}}$ are effective parameters accoun
 - HARQ enhancement
 - Multi-user scenarios
 
-![5G Integration](../../assets/images/research/5g_rate_matching_integration.png)
+![5G Integration](../../research/5g_rate_matching_integration.png)
 *Figure 11: Rate-matching integration in 5G NR polar code chain*
 
 ### 6G Considerations

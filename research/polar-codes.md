@@ -79,37 +79,42 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 
 **Problem Addressed**: Type II errors (incorrect codeword selection) in SCL decoding by reducing the number of low-weight codewords.
 
+
+**Technical Innovation**:
+- **Serially Concatenated Structure**: Multiple polar kernel matrices as pre-transformation layers
+- **Weight Distribution Enhancement**: Improved minimum distance properties
+
+
 <img src="/assets/images/research/polarcode/deep_polar_layer.png" width="90%" alt="deep polar multi-layer improvement example">
 *Figure 4: Deep polar codes multi-layer architecture addressing Type II errors.*
 
-**Technical Innovation**:
-- **Serially Concatenated Structure**: Multiple layers with optimized rate allocation
-- **Weight Distribution Enhancement**: Improved minimum distance properties
-- **SCL Decoding Enhancement**: Effective increase in list size without proportional complexity
+As shown in Figure 4, incresing the number of pre-transform layer can improve the weight spectrum of the corresponding code.
 
 <img src="/assets/images/research/polarcode/deep_polar_bec.png" width="80%" alt="BLER at BEC deep polar">
-*Figure 5: Decoding performance comparison across different techniques and scenarios (BEC channel).*
+*Figure 5: Decoding performance comparison across different techniques and scenarios.*
 
-
+Figure 5 present simulation result at binary erasure channel (BEC) with various code parameters, i.e., the size of message bits and codeword bits. Across the various code parameters, our pre-transform structure effectively improve the weight spectrum, as shown the enhanced decoding performance under ML decoding, which can be obtained by SCL decoder with moderate and large list sizes. 
 
 #### Sparsely Pre-transformed Polar (SPP) Codes
 
 **Problem Addressed**: Type I errors (correct codeword elimination) in SCL decoding by limiting the number of consecutive (semi-polarized) information bits.
 
+We introduce two types of pre-transform, each of which aims to reduce $P(\epsilon_1)$ and $P(\epsilon_2)$. The overall encoding structure is illustrated in Figure 6.
+
 <img src="/assets/images/research/polarcode/spp_code.png" width="90%" alt="SPP encoding structure">
 *Figure 6: SPP codes preventing correct path elimination through pre-transformation.*
 
-**Technical Innovation**:
-- **Pre-transformation Matrix**: Strategic bit reordering to prevent path elimination
-- **Information Bit Constraint**: Consecutive information bits are separated
-- **Frozen Bit Insertion**: Low-reliability positions filled strategically
-- **Path Preservation**: Maintains correct paths in small list sizes
-
+**Two types of pre-transform**:
+- **Type-I pre-transform**: prevents the use of consecutive semi-polarized information bits. To show the impact of consecutive semi-polarized information bits, we present figure 7, in which the error probability of $\epsilon_1$, i.e., $P(\epsilon_1)$ is decreased by limiting the use of consecutive information bits.
 <img src="/assets/images/research/polarcode/spp_consecutive_impact.png" width="65%" alt="effect of non-consecutive info bits">
 *Figure 7: The effect of consecutive semi-polarized information bits.*
 
+- **Type-II pre-transform**: targets to reduce the number of low-weight codewords.
+
+Figure 8 present simulation result at AWGN channel with various code parameters. Our solutions (Deep polar codes and SPP codes) shows superior error-correcting performance compared to 5G CA polar codes. 
+
 <img src="/assets/images/research/polarcode/spp_bler.png" width="100%" alt="SPP BLER performance">
-*Figure 8: Decoding performance comparison across different techniques and scenarios (AWGN channel).*
+*Figure 8: Decoding performance comparison across different techniques and scenarios.*
 
 ### Challenge 2: Blocklength Flexibility
 Polar codes naturally support blocklengths $N = 2^n$ only.
@@ -119,20 +124,29 @@ The inherent constraint of Arıkan's construction limits polar code lengths to p
 - **Shortening and Puncturing:** Used to reduce code length from a larger mother code of size $N > M$. 
 - **Extension and Repetition:** Used to increase code length from a smaller mother code of size $N < M$.
 
-In 5G NR systems, quasi-uniform puncturing and shortening with sub-block interleaving are employed for rate-matching, ensuring compatibility while maintaining good performance \cite{3gpp-nr-coding}. Shortening removes the last $N-M$ interleaved codeword bits, while puncturing removes the first $N-M$ bits. Repetition extends the first $M-N$ interleaved codeword bits.
+In 5G NR systems, quasi-uniform puncturing, shortening, and repetition with sub-block interleaving are employed for rate-matching, ensuring compatibility while maintaining good performance. Shortening removes the last $N-M$ interleaved codeword bits, while puncturing removes the first $N-M$ bits. Repetition extends the first $M-N$ interleaved codeword bits.
 
+#### Motivation
+While shortening and puncturing is excellent rate-matching techniques in practive, they requires the decoding of mother code, whose size is at most double compared to required codeword sizes. So, 5G NR adopts repetition based methods for low rate code. However, repetition gives limited coding gain compared to other methods. 
 
-#### Our extension method
+Sometimes, extension-based methods can offer superior performance with reduced complexity when the desired code length exceeds a power of two.
+
+#### Our Solution
+We introduce a systematic extension method that leverages the hierarchical encoding structure of deep polar codes by concatenating partial codewords from different transformation layers. 
+The encoding process generates multiple codewords from each layer, which are then concatenated to form a longer code, enabling flexible blocklengths that are not limited to powers of two (Figure 9).
 <img src="/assets/images/research//polarcode/deep_polar_extension.png" width="90%" alt="Extension encoder">
 *Figure 9: The encoding for single-layer extended deep polar codes.*
 
-<img src="/assets/images/research//polarcode/extension_code_decoding.png" width="60%" alt="Extension decoder">
-*Figure 10: The decoding for single-layer extended deep polar codes.*
-
+The resultant codeword exhibit the improved channel polarization as shown in figure 10.
 <img src="/assets/images/research//polarcode/improved_polarization.png" width="90%" alt="Improved polarization">
-*Figure 11: Improved channel polarization by our method.*
+*Figure 10: Improved channel polarization by our method.*
 
+We design an efficient LLR-combined successive cancellation list (SCL) decoding algorithm that incorporates soft information from pre-transform layers into the primary decoding process (Figure 11). The decoder first applies soft-output SCL decoding to the extended segments to estimate soft information, then uses a modifed SCL decoder that combines both the original LLR values and the soft information from connection bits. 
 
+<img src="/assets/images/research//polarcode/extension_code_decoding.png" width="60%" alt="Extension decoder">
+*Figure 11: The decoding for single-layer extended deep polar codes.*
+
+Figure 12 shows the effectivenes of our extension scheme compareed to repetition for rate-matching.
 <img src="/assets/images/research/polarcode/extension_bler.png" width="80%" alt="Extension code BLER">
 *Figure 12: BLER performance of repetition-based and the extended deep polar codes with $N = 1024$ and $M = 1024 + 64 = 1088$, when SC decoding is applied.*
 
@@ -157,7 +171,7 @@ Polar codes represent a paradigm shift in channel coding, offering provable capa
 ## Related Publications
 1. **G. Choi** and N. Lee, "[Deep Polar Codes](https://ieeexplore.ieee.org/abstract/document/10462164)," in *IEEE Transactions on Communications*, vol. 72, no. 7, pp. 3842-3855, July 2024
 2. **G. Choi** and N. Lee, "[Sparsely Pre-transformed Polar Codes for Low-Latency SCL Decoding](https://ieeexplore.ieee.org/abstract/document/10945422)," in *IEEE Transactions on Communications* (early access)
-3.  **G. Choi** and N. Lee, "[Rate-Matching Deep Polar Codes via Polar Coded Extension](https://arxiv.org/abs/2505.06867)," submitted to TCOM.
+3. **G. Choi** and N. Lee, "[Rate-Matching Deep Polar Codes via Polar Coded Extension](https://arxiv.org/abs/2505.06867)," submitted to TCOM.
 
 
 **Contact**: [geon.choi@postech.ac.kr](mailto:geon.choi@postech.ac.kr)
