@@ -22,14 +22,9 @@ Polar codes exploit the remarkable channel polarization phenomenon discovered by
 
 $$W_N^{(i)}: \mathcal{X} \to \mathcal{Y}^N \times \mathcal{X}^{i-1}$$
 
-![Polar Code Construction](../assets/images/research/polarization.png)
+<img src="/assets/images/research/polarcode/polarization.png" width="90%" alt="Polar Code Construction">
 *Figure 1: Polar code construction and channel polarization phenomenon.*
-<!-- 
-**Key Properties**:
-- **Capacity Achievement**: Polar codes achieve the symmetric capacity I(W) of the underlying channel
-- **Explicit Construction**: No random codes needed - completely deterministic construction
-- **Low Complexity**: Encoding and decoding complexity of O(N log N)
-- **Recursive Structure**: Natural binary tree structure enabling efficient processing -->
+
 
 ### Successive Cancellation (SC) Decoding
 
@@ -41,11 +36,17 @@ $$\hat{u}_i = \begin{cases}
 \end{cases}$$
 where $\mathcal{F}$ is the frozen set and $\mathcal{I}$ is the information set.
 
-![Polar Code Construction](../assets/images/research/sc_decoding.png)
+<img src="/assets/images/research/polarcode/sc_decoding.png" width="90%" alt="SC decoding">
 *Figure 2: Successive cancellation decoding.*
 
 The SC list (SCL) decoder maintains upto $L$ decoding paths to improve the decoding performance.
 
+
+**Key Properties**:
+- **Capacity Achievement**: Polar codes achieve the symmetric capacity I(W) of the underlying channel
+- **Explicit Construction**: No random codes needed - completely deterministic construction
+- **Low Complexity**: Encoding and decoding complexity of O(N log N)
+<!-- - **Recursive Structure**: Natural binary tree structure enabling efficient processing -->
 
 
 ## Practical Challenges and Solutions
@@ -69,7 +70,7 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 - Dominates at high SNR and large list size due to minimum distance
 - Addressed by deep polar codes
 
-![Error Analysis Framework](../assets/images/research/scl_error_event.png)
+<img src="/assets/images/research/polarcode/scl_error_event.png" width="90%" alt="SCL error event table">
 *Figure 3: Two types of error event of SCL decoder.*
 
 
@@ -78,7 +79,7 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 
 **Problem Addressed**: Type II errors (incorrect codeword selection) in SCL decoding by reducing the number of low-weight codewords.
 
-![Deep Polar Architecture](../assets/images/research/deep_polar_layer.png)
+<img src="/assets/images/research/polarcode/deep_polar_layer.png" width="90%" alt="deep polar multi-layer improvement example">
 *Figure 4: Deep polar codes multi-layer architecture addressing Type II errors.*
 
 **Technical Innovation**:
@@ -86,7 +87,7 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 - **Weight Distribution Enhancement**: Improved minimum distance properties
 - **SCL Decoding Enhancement**: Effective increase in list size without proportional complexity
 
-![Performance Comprehensive](../assets/images/research/deep_polar_bec.png)
+<img src="/assets/images/research/polarcode/deep_polar_bec.png" width="80%" alt="BLER at BEC deep polar">
 *Figure 5: Decoding performance comparison across different techniques and scenarios (BEC channel).*
 
 
@@ -95,7 +96,7 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 
 **Problem Addressed**: Type I errors (correct codeword elimination) in SCL decoding by limiting the number of consecutive (semi-polarized) information bits.
 
-![SPP Mechanism](../assets/images/research/spp_code.png)
+<img src="/assets/images/research/polarcode/spp_code.png" width="90%" alt="SPP encoding structure">
 *Figure 6: SPP codes preventing correct path elimination through pre-transformation.*
 
 **Technical Innovation**:
@@ -104,10 +105,10 @@ Understanding and addressing specific error mechanisms in SCL decoding is crucia
 - **Frozen Bit Insertion**: Low-reliability positions filled strategically
 - **Path Preservation**: Maintains correct paths in small list sizes
 
-![Performance Comprehensive](../assets/images/research/spp_consecutive_impact.png)
+<img src="/assets/images/research/polarcode/spp_consecutive_impact.png" width="65%" alt="effect of non-consecutive info bits">
 *Figure 7: The effect of consecutive semi-polarized information bits.*
 
-![Performance Comprehensive](../assets/images/research/spp_bler.png)
+<img src="/assets/images/research/polarcode/spp_bler.png" width="100%" alt="SPP BLER performance">
 *Figure 8: Decoding performance comparison across different techniques and scenarios (AWGN channel).*
 
 ### Challenge 2: Blocklength Flexibility
@@ -121,12 +122,19 @@ The inherent constraint of Arıkan's construction limits polar code lengths to p
 In 5G NR systems, quasi-uniform puncturing and shortening with sub-block interleaving are employed for rate-matching, ensuring compatibility while maintaining good performance \cite{3gpp-nr-coding}. Shortening removes the last $N-M$ interleaved codeword bits, while puncturing removes the first $N-M$ bits. Repetition extends the first $M-N$ interleaved codeword bits.
 
 
-**Our extension** 
+#### Our extension method
+<img src="/assets/images/research//polarcode/deep_polar_extension.png" width="90%" alt="Extension encoder">
+*Figure 9: The encoding for single-layer extended deep polar codes.*
 
-Simulation Results
+<img src="/assets/images/research//polarcode/extension_code_decoding.png" width="60%" alt="Extension decoder">
+*Figure 10: The decoding for single-layer extended deep polar codes.*
 
-![Performance Comprehensive](../../assets/images/research/polar_performance_comprehensive.png)
-*Figure 10: Comprehensive performance comparison across different techniques and scenarios*
+<img src="/assets/images/research//polarcode/improved_polarization.png" width="90%" alt="Improved polarization">
+*Figure 11: Improved channel polarization by our method.*
+
+
+<img src="/assets/images/research/polarcode/extension_bler.png" width="80%" alt="Extension code BLER">
+*Figure 12: BLER performance of repetition-based and the extended deep polar codes with $N = 1024$ and $M = 1024 + 64 = 1088$, when SC decoding is applied.*
 
 
 ### Challenge 3: Non-Coherent Transmission
@@ -138,26 +146,11 @@ Simulation Results
 - Code-splitting techniques
 - Joint detection and decoding
 
-![Non-Coherent System](../../assets/images/research/noncoherent_comprehensive.png)
-*Figure 8: Non-coherent polar-coded communication system*
-
-<!-- **Key Innovations**:
-- Information-theoretic analysis of capacity limits
-- Practical decoder with reasonable complexity
-- Performance analysis under various fading conditions -->
-
-Simulation Results
-
-![Performance Comprehensive](../../assets/images/research/polar_performance_comprehensive.png)
-*Figure 10: Comprehensive performance comparison across different techniques and scenarios*
-
 
 
 ## Conclusion
 
-Polar codes represent a paradigm shift in channel coding, offering provable capacity achievement with practical implementability. My research addresses the key challenges preventing widespread deployment, developing targeted solutions for error mitigation, blocklength flexibility, and performance optimization.
-
-The integration of advanced techniques - deep polar codes, SPP codes, and sophisticated rate-matching - creates a comprehensive framework for next-generation wireless systems. These innovations enable polar codes to meet the stringent requirements of URLLC, support diverse applications from IoT to holographic communications, and provide the foundation for 6G wireless networks.
+Polar codes represent a paradigm shift in channel coding, offering provable capacity achievement with practical implementability. The integration of advanced techniques - deep polar codes, SPP codes, and rate-matching - creates a comprehensive framework for next-generation wireless systems. These innovations enable polar codes to meet the stringent requirements of URLLC, support diverse applications from IoT to holographic communications, and provide the foundation for 6G wireless networks.
 
 ---
 
